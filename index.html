@@ -23,17 +23,16 @@ function onDeviceReady(){
             states[Connection.CELL_4G]  = 'Cell 4G connection';
             states[Connection.CELL]     = 'Cell generic connection';
             states[Connection.NONE]     = 'No network connection'
+           
             alert("Connection type: " + states[networkState]);
-            
-            
-  }
+             }
   
     
 </script>
 
 <body>
 	<button type="button" onclick="onDeviceReady()">Test connection</button>
-	
+	<button type="button" onclick="checkInternet()">Test connection2</button>
 	
 </body>
 </html>
