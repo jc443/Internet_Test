@@ -13,12 +13,13 @@
     <!-- Define app icon for each platform.    -->
     <icon src="icon.png" />
 
-	<gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
+
 	<preference name="phonegap-version" value="3.6.3" />
 	<gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" /> 
 	<gap:plugin name="com.badrit.backbutton" />
 	<gap:plugin name="org.li8.inappbrowser" version="0.1" />
-	
+	<gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
+		
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
