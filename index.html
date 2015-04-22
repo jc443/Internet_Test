@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
-
+<head>
+<title>Compass and Connection Type</title>
 
 <script type="/text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" charset="utf-8">
   document.addEventListener("deviceready",onDeviceReady,false);
 
 function onDeviceReady(){
-   alert('Device Ready');
+  	startWatch();
 }
  function checkConnection() {
     var networkState = navigator.connection.type;
@@ -26,13 +27,30 @@ function onDeviceReady(){
 
 
 }
-  
+
+function startWatch(){
+	var options = { frequency: 2000 };
+	watchID = navigator.compass.watchHeading(onSuccessCompass, onErrorCompass, options);
+}
+
+function onSuccessCompass(heading) {
+	var element = document.getElementById('heading');
+	element.innerHTML = 'Heading: ' + heading.magneticHeading;
+};
+
+function stopWatch() {
+	if (watchID){
+		navigator.compass.clearWatch(watchID);
+		watchID = null;
+	}
+}
     
 </script>
 
 <body>
-	<button type="button" onclick="onDeviceReady()">Device Check</button>
-	<button type="button" onclick="checkInternet()">Check</button>
+	<button onclick="onDeviceReady()">Device Check</button>
+	<button onclick="checkInternet()">Check</button><br><br>
+	<div id="heading">Heading for Compass goes here.</div>
 	
 </body>
 </html>
