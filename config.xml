@@ -1,3 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml reference:
+     https://build.phonegap.com/docs/config-xml -->
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.phonegap.exampleUSESOMEUNIQUEIDHERE031520151109" versionCode="10" version="1.0.0">
 <!--  versionCode is optional and Android only  -->
 <name>Connection App</name>
@@ -6,4 +10,6 @@
 <!--  above added by J McHugh on 3.15.2015 10.51am   -->
 <gap:plugin name="org.apache.cordova.network-information" version="0.2.7"/>
 <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" /> 
+ <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
 </widget>
