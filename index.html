@@ -7,7 +7,9 @@
   document.addEventListener("deviceready",onDeviceReady,false);
 
 function onDeviceReady(){
-    function checkConnection() {
+   alert('Device Ready');
+}
+ function checkConnection() {
     var networkState = navigator.connection.type;
 
     var states = {};
@@ -21,17 +23,16 @@ function onDeviceReady(){
     states[Connection.NONE]     = 'No network connection';
 
     alert('Connection type: ' + states[networkState]);
-}
 
-checkConnection();
+
 }
   
     
 </script>
 
 <body>
-	<button type="button" onclick="onDeviceReady()">Test connection</button>
-	<button type="button" onclick="checkInternet()">Test connection2</button>
+	<button type="button" onclick="onDeviceReady()">Device Check</button>
+	<button type="button" onclick="checkInternet()">Check</button>
 	
 </body>
 </html>
