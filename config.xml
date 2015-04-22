@@ -5,4 +5,5 @@
 <preference name="phonegap-version" value="3.7.0"/>
 <!--  above added by J McHugh on 3.15.2015 10.51am   -->
 <gap:plugin name="org.apache.cordova.network-information" version="0.2.7"/>
+<gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" /> 
 </widget>
