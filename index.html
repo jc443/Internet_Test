@@ -1,56 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Compass and Connection Type</title>
+  <head>
+    <title>navigator.connection.type Example</title>
 
-<script type="/text/javascript" charset="utf-8" src="cordova.js"></script>
-<script type="text/javascript" charset="utf-8">
-  document.addEventListener("deviceready",onDeviceReady,false);
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
 
-function onDeviceReady(){
-  	startWatch();
-}
- function checkConnection() {
-    var networkState = navigator.connection.type;
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
 
-    var states = {};
-    states[Connection.UNKNOWN]  = 'Unknown connection';
-    states[Connection.ETHERNET] = 'Ethernet connection';
-    states[Connection.WIFI]     = 'WiFi connection';
-    states[Connection.CELL_2G]  = 'Cell 2G connection';
-    states[Connection.CELL_3G]  = 'Cell 3G connection';
-    states[Connection.CELL_4G]  = 'Cell 4G connection';
-    states[Connection.CELL]     = 'Cell generic connection';
-    states[Connection.NONE]     = 'No network connection';
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        checkConnection();
+    }
 
-    alert('Connection type: ' + states[networkState]);
+        function checkConnection() {
+            var networkState = navigator.connection.type;
 
+            var states = {};
+            states[Connection.UNKNOWN]  = 'Unknown connection';
+            states[Connection.ETHERNET] = 'Ethernet connection';
+            states[Connection.WIFI]     = 'WiFi connection';
+            states[Connection.CELL_2G]  = 'Cell 2G connection';
+            states[Connection.CELL_3G]  = 'Cell 3G connection';
+            states[Connection.CELL_4G]  = 'Cell 4G connection';
+            states[Connection.CELL]     = 'Cell generic connection';
+            states[Connection.NONE]     = 'No network connection';
 
-}
+            alert('Connection type: ' + states[networkState]);
+        }
 
-function startWatch(){
-	var options = { frequency: 2000 };
-	watchID = navigator.compass.watchHeading(onSuccessCompass, onErrorCompass, options);
-}
-
-function onSuccessCompass(heading) {
-	var element = document.getElementById('heading');
-	element.innerHTML = 'Heading: ' + heading.magneticHeading;
-}
-
-function stopWatch() {
-	if (watchID){
-		navigator.compass.clearWatch(watchID);
-		watchID = null;
-	}
-}
-    
-</script>
-
-<body>
-	<button onclick="onDeviceReady()">Device Check</button>
-	<button onclick="checkConnection()">Check</button><br><br>
-	<div id="heading">Heading for Compass goes here.</div>
-	
-</body>
+    </script>
+  </head>
+  <body>
+    <p>A dialog box will report the network state.</p>
+  </body>
 </html>
